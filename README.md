@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# worker-sales
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React project for management of employee's sales and validation of monthly sales.
 
-## Available Scripts
+The project implements redux, router & material ui.
 
-In the project directory, you can run:
+### Technologies
 
-### `npm start`
+- [React JS](https://github.com/facebook/react)
+- [React Router](https://github.com/ReactTraining/react-router)
+- [Redux](https://github.com/reduxjs/redux)
+- [Redux-Thunk](https://github.com/reduxjs/redux-thunk)
+- [Material-UI](https://github.com/mui-org/material-ui)
+- [Material-UI Validator Form](https://www.npmjs.com/package/react-material-ui-form-validator)
+- [UUID](https://www.npmjs.com/package/uuid)
+- [Axios](https://github.com/axios/axios)
+- [Express](https://github.com/expressjs/express)
+- [Body-Parser](https://www.npmjs.com/package/body-parser)
+- [Mongo DB](https://www.mongodb.com/es)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## How to use it
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Requirements
 
-### `npm test`
+Node >= 12.18.2
+npm >= 6.14.8
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clone repository to desired directory
+Once inside the directory, type in terminal the following
 
-### `npm run build`
+### Frontend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Go to the frontend folder and type
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This command should install everything you need to get the code started, once finished type
 
-### `npm run eject`
+- npm start
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The project should start running and automatically a tab in the browser will open with the project, to stop the project type in terminal the command, the directory will be localhost:3000
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Ctrl+C
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The second option is to download the project as a .zip file, if preferred extract everything from the .zip file on a desired directory (ie Documents/Codes/worker-sales)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Once that's done repeat the steps in terminal mentioned above.
 
-## Learn More
+### Backend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Inside the root folder type the following
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- npm install
 
-### Code Splitting
+This command should install everything you need to get the code started, once finished type
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- npm start
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The server should start running will be left in the background, the directory will be localhost:8082
