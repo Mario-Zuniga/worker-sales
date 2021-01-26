@@ -237,7 +237,7 @@ function EditWorker() {
               color={toggledTheme ? "secondary" : "primary"}
               className={classes.submit}
             >
-              Sign Up
+              Update
             </Button>
             <Button
               fullWidth

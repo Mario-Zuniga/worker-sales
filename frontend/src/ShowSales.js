@@ -21,6 +21,7 @@ import {
 } from "@material-ui/core";
 
 import DeleteIcon from "@material-ui/icons/Delete";
+import EditIcon from "@material-ui/icons/Edit";
 
 import { useStyles } from "./styles/ShowSalesStyles";
 
@@ -173,6 +174,11 @@ function ShowSales() {
                     <ListItemText
                       primary={`Quantity: $${l.qty}`}
                       secondary={`Date: ${l.date}`}
+                    />
+                    <EditIcon
+                      onClick={() => {
+                        history.push(`/employee/${id}/sale/${l.id}`);
+                      }}
                     />
                     <DeleteIcon
                       onClick={() => {

@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import WorkersList from "./WorkersList";
 import EditWorker from "./EditWorker";
+import EditSale from "./EditSale";
 import ShowSales from "./ShowSales";
 import AddWorker from "./AddWorker";
 import AddSale from "./AddSale";
@@ -19,6 +20,11 @@ function App() {
           exact
           path="/employee/:id"
           render={(routeProps) => <ShowSales {...routeProps} />}
+        />
+        <Route
+          exact
+          path="/employee/:wId/sale/:sId"
+          render={(routeProps) => <EditSale {...routeProps} />}
         />
         <Route
           exact
