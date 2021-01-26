@@ -17,6 +17,10 @@ const userSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    birthday: {
+      type: String,
+      required: true,
+    },
     sales: {
       type: Array,
     },

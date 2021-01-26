@@ -39,6 +39,7 @@ function EditWorker() {
     lastName: employee[elementsIndex].lastName,
     email: employee[elementsIndex].email,
     expSales: employee[elementsIndex].expSales,
+    birthday: employee[elementsIndex].birthday,
     sales: employee[elementsIndex].sales,
   });
 
@@ -161,6 +162,27 @@ function EditWorker() {
                     seteditInfo({
                       ...editInfo,
                       email: e.target.value,
+                    });
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextValidator
+                  variant="outlined"
+                  id="birthday"
+                  label="Birthday"
+                  type="date"
+                  className={classes.textField}
+                  value={editInfo.birthday}
+                  validators={["required"]}
+                  errorMessages={["This field is required"]}
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  onChange={(e) => {
+                    seteditInfo({
+                      ...editInfo,
+                      birthday: e.target.value,
                     });
                   }}
                 />

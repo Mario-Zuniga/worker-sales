@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
-import { fetchData } from "./redux/actions/index";
 import { useSelector, useDispatch } from "react-redux";
+import { fetchData } from "./redux/actions/index";
 import { toggled } from "./redux/actions/index";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
@@ -35,6 +35,7 @@ function AddWorker() {
     lastName: "",
     email: "",
     expSales: "",
+    birthday: "",
     sales: [],
   });
 
@@ -157,6 +158,27 @@ function AddWorker() {
                     setNewInfo({
                       ...newInfo,
                       email: e.target.value,
+                    });
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextValidator
+                  variant="outlined"
+                  label="Birthday"
+                  id="birthday"
+                  name="birthday"
+                  type="date"
+                  value={newInfo.birthday}
+                  validators={["required"]}
+                  errorMessages={["This field is required"]}
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  onChange={(e) => {
+                    setNewInfo({
+                      ...newInfo,
+                      birthday: e.target.value,
                     });
                   }}
                 />

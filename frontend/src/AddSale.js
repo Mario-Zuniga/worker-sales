@@ -137,7 +137,6 @@ function AddSale() {
                   id="date"
                   label="Date of Sale"
                   type="date"
-                  defaultValue="2017-05-24"
                   className={classes.textField}
                   value={newSale.date}
                   validators={["required"]}

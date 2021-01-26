@@ -13,6 +13,7 @@ router.post("/post", async (req, res) => {
     lastName: req.body.lastName,
     email: req.body.email,
     expSales: req.body.expSales,
+    birthday: req.body.birthday,
     sales: req.body.sales,
   });
 
@@ -60,6 +61,7 @@ router.patch("/edit/:id", async (req, res) => {
           lastName: req.body.lastName,
           email: req.body.email,
           expSales: req.body.expSales,
+          birthday: req.body.birthday,
           sales: req.body.sales,
         },
       }
