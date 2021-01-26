@@ -48,4 +48,26 @@ router.patch("/:id", async (req, res) => {
   }
 });
 
+router.patch("/edit/:id", async (req, res) => {
+  try {
+    const updatedSale = await User.updateMany(
+      {
+        _id: req.params.id,
+      },
+      {
+        $set: {
+          firstName: req.body.firstName,
+          lastName: req.body.lastName,
+          email: req.body.email,
+          expSales: req.body.expSales,
+          sales: req.body.sales,
+        },
+      }
+    );
+    res.json(updatedSale);
+  } catch (err) {
+    res.json({ message: err });
+  }
+});
+
 export default router;

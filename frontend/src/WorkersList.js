@@ -23,6 +23,8 @@ import {
 } from "@material-ui/core";
 
 import DeleteIcon from "@material-ui/icons/Delete";
+import EditIcon from "@material-ui/icons/Edit";
+
 import { useStyles } from "./styles/WorkersListStyles";
 
 import bgl from "./styles/bg-l.svg";
@@ -134,6 +136,9 @@ function WorkersList() {
                         }}
                         primary={`${e.firstName} ${e.lastName}`}
                         secondary={`ID: ${e._id}`}
+                      />
+                      <EditIcon
+                        onClick={() => history.push(`/edit/${e._id}`)}
                       />
                       <DeleteIcon onClick={() => deleteWorker(e._id)} />
                     </ListItem>
