@@ -41,6 +41,7 @@ function EditWorker() {
     expSales: employee[elementsIndex].expSales,
     birthday: employee[elementsIndex].birthday,
     sales: employee[elementsIndex].sales,
+    goalDate: employee[elementsIndex].goalDate,
   });
 
   const handleSubmit = async () => {
@@ -166,6 +167,26 @@ function EditWorker() {
                   }}
                 />
               </Grid>
+              <Grid item xs={12}>
+                <TextValidator
+                  variant="outlined"
+                  label="Expected Sales"
+                  id="expSales"
+                  name="expSales"
+                  type="number"
+                  validators={["required"]}
+                  errorMessages={["this field is required"]}
+                  value={editInfo.expSales}
+                  required
+                  fullWidth
+                  onChange={(e) => {
+                    seteditInfo({
+                      ...editInfo,
+                      expSales: e.target.value,
+                    });
+                  }}
+                />
+              </Grid>
               <Grid item xs={12} sm={6}>
                 <TextValidator
                   variant="outlined"
@@ -190,19 +211,20 @@ function EditWorker() {
               <Grid item xs={12} sm={6}>
                 <TextValidator
                   variant="outlined"
-                  label="Expected Sales"
-                  id="expSales"
-                  name="expSales"
-                  type="number"
+                  label="Goal Date"
+                  id="goalDate"
+                  name="goalDate"
+                  type="date"
+                  value={editInfo.goalDate}
                   validators={["required"]}
-                  errorMessages={["this field is required"]}
-                  value={editInfo.expSales}
-                  required
-                  fullWidth
+                  errorMessages={["This field is required"]}
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
                   onChange={(e) => {
                     seteditInfo({
                       ...editInfo,
-                      expSales: e.target.value,
+                      goalDate: e.target.value,
                     });
                   }}
                 />

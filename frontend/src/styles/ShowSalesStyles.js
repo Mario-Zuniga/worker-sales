@@ -38,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
   buffer: {
     marginTop: "2%",
+    marginBottom: "3%",
   },
   button: {
     marginTop: "4%",

@@ -15,6 +15,7 @@ router.post("/post", async (req, res) => {
     expSales: req.body.expSales,
     birthday: req.body.birthday,
     sales: req.body.sales,
+    goalDate: req.body.goalDate,
   });
 
   user.save().then((data) => {
@@ -63,6 +64,7 @@ router.patch("/edit/:id", async (req, res) => {
           expSales: req.body.expSales,
           birthday: req.body.birthday,
           sales: req.body.sales,
+          goalDate: req.body.goalDate,
         },
       }
     );

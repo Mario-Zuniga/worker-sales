@@ -1,7 +1,10 @@
+import React, { useState, useEffect } from "react";
+
 import { useHistory, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { fetchData } from "./redux/actions/index";
 import { toggled } from "./redux/actions/index";
-import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
 
 import {
   LinearProgress,
@@ -17,6 +20,8 @@ import {
   Grid,
 } from "@material-ui/core";
 
+import DeleteIcon from "@material-ui/icons/Delete";
+
 import { useStyles } from "./styles/ShowSalesStyles";
 
 import bgl from "./styles/bg-l.svg";
@@ -26,6 +31,10 @@ function ShowSales() {
   const classes = useStyles();
   const history = useHistory();
   const { id } = useParams();
+
+  let d = new Date();
+  let m = new Date();
+  let y = new Date();
 
   const dispatch = useDispatch();
 
@@ -46,6 +55,25 @@ function ShowSales() {
 
     const progress =
       (totalSold / parseInt(employee[elementsIndex].expSales)) * 100;
+
+    const deleteSale = async (data) => {
+      let allSales = employee[elementsIndex].sales;
+      const specificSale = employee[elementsIndex].sales.findIndex(
+        (element) => element.id === data.id
+      );
+      allSales.splice(specificSale, 1);
+      const updatedSales = {
+        sales: allSales,
+      };
+      await axios({
+        method: "patch",
+        url: `/api/users/edit/${id}`,
+        data: updatedSales,
+      });
+
+      dispatch(fetchData);
+      history.push(`/employee/${id}`);
+    };
 
     return (
       <div
@@ -130,15 +158,26 @@ function ShowSales() {
                     value={progress > 100 ? 100 : progress}
                   />
                 </div>
+                <Typography
+                  className={classes.salesInfo}
+                  variant="body1"
+                >{`${y.getFullYear()}-${m.getMonth() + 1}-${d.getDate()} / ${
+                  employee[elementsIndex].goalDate
+                }`}</Typography>
               </Paper>
 
               <Paper className={classes.paper}>
                 <Typography variant="h5">Sales Log</Typography>
                 {employee[elementsIndex].sales.map((l) => (
-                  <ListItem key={uuidv4()}>
+                  <ListItem key={l.id}>
                     <ListItemText
                       primary={`Quantity: $${l.qty}`}
                       secondary={`Date: ${l.date}`}
+                    />
+                    <DeleteIcon
+                      onClick={() => {
+                        deleteSale(l);
+                      }}
                     />
                   </ListItem>
                 ))}

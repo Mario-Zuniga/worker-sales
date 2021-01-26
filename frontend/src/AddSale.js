@@ -5,6 +5,7 @@ import { fetchData } from "./redux/actions/index";
 import { useHistory, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { toggled } from "./redux/actions/index";
+import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 
 import {
@@ -33,6 +34,7 @@ function AddSale() {
   let toggledTheme = useSelector((state) => state.theme);
 
   const [newSale, setNewSale] = useState({
+    id: uuidv4(),
     date: "",
     qty: "",
   });

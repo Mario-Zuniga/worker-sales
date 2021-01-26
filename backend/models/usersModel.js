@@ -24,6 +24,10 @@ const userSchema = mongoose.Schema(
     sales: {
       type: Array,
     },
+    goalDate: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,

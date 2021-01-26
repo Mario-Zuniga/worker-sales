@@ -36,6 +36,7 @@ function AddWorker() {
     email: "",
     expSales: "",
     birthday: "",
+    goalDate: "",
     sales: [],
   });
 
@@ -162,6 +163,26 @@ function AddWorker() {
                   }}
                 />
               </Grid>
+              <Grid item xs={12}>
+                <TextValidator
+                  variant="outlined"
+                  label="Expected Sales"
+                  id="expSales"
+                  name="expSales"
+                  type="number"
+                  validators={["required"]}
+                  errorMessages={["this field is required"]}
+                  value={newInfo.expSales}
+                  required
+                  fullWidth
+                  onChange={(e) => {
+                    setNewInfo({
+                      ...newInfo,
+                      expSales: e.target.value,
+                    });
+                  }}
+                />
+              </Grid>
               <Grid item xs={12} sm={6}>
                 <TextValidator
                   variant="outlined"
@@ -186,19 +207,20 @@ function AddWorker() {
               <Grid item xs={12} sm={6}>
                 <TextValidator
                   variant="outlined"
-                  label="Expected Sales"
-                  id="expSales"
-                  name="expSales"
-                  type="number"
+                  label="Goal Date"
+                  id="goalDate"
+                  name="goalDate"
+                  type="date"
+                  value={newInfo.goalDate}
                   validators={["required"]}
-                  errorMessages={["this field is required"]}
-                  value={newInfo.expSales}
-                  required
-                  fullWidth
+                  errorMessages={["This field is required"]}
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
                   onChange={(e) => {
                     setNewInfo({
                       ...newInfo,
-                      expSales: e.target.value,
+                      goalDate: e.target.value,
                     });
                   }}
                 />
